@@ -53,6 +53,7 @@ public class TC001_AccountRegistrationTest extends BaseClass {
 		 
 		 String conmsg=ar.getConfirMsg();
 		 Assert.assertEquals(conmsg,"Your Account Has Been Created!");	 
+		 
 		}
 		catch(Exception e)
 		{
