@@ -4,15 +4,21 @@ pipeline {
     triggers {
         cron('H 4 * * 1-5')  // Every weekday at 4:00 AM
     }
-    tools{
-        maven 'MyMaven'
-        jdk 'MyJava'
-    }
-
+     
     stages {
-        stage('checkotromGit') {
+         stage('Build') {
             steps {
-                git 'https://github.com/sreekanth-karada/OA.git'
+                echo "building the project"
+            }
+        }
+         stage('Test') {
+            steps {
+                sh "Testing the project"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "Deploy the project"
             }
         }
         
