@@ -1,29 +1,31 @@
-pipeline {
+ pipeline {
     agent any
     stages {
-        
-         stage('Build') {
+        stage('Build') {
             steps {
-                echo "building the project"
+                echo "Building the project"
                 bat "mvn clean"
             }
         }
-         stage('Test') {
+        
+        stage('Test') {
             steps {
                 echo "Testing the project"
                 bat "mvn test"
             }
         }
-        stage('compile') {
+        
+        stage('Compile') {
             steps {
-                echo "compiling the project"
+                echo "Compiling the project"
                 bat "mvn compile"
             }
         }
+        
         stage('Deploy') {
             steps {
-                echo "Deploy the project"
-                
+                echo "Deploying the project"
+                // Add deployment steps here if needed
             }
         }
     }
