@@ -19,14 +19,12 @@ pipeline {
                 echo "compiling the project"
                 bat "mvn compile"
             }
+        }
         stage('Deploy') {
             steps {
                 echo "Deploy the project"
                 
             }
-        }
-        
-        
         }
     }
 }
