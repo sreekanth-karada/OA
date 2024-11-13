@@ -1,5 +1,9 @@
  pipeline {
     agent any
+ environment {
+        JAVA_HOME = "${tool 'MyJava'}"  // Replace 'MyJava' with the correct JDK name from Global Tool Configuration
+        PATH = "${JAVA_HOME}/bin:${env.PATH}"
+    }
     stages {
         stage('Build') {
             steps {
