@@ -9,23 +9,28 @@ pipeline {
          stage('Build') {
             steps {
                 echo "building the project"
+                bat "mvn clean"
             }
         }
          stage('Test') {
             steps {
-                sh "Testing the project"
+                echo "Testing the project"
+                bat "mvn test"
             }
         }
+        stage('compile') {
+            steps {
+                echo "compiling the project"
+                bat "mvn compile"
+            }
         stage('Deploy') {
             steps {
                 echo "Deploy the project"
+                
             }
         }
         
-        stage('compile') {
-            steps {
-                sh "mvn compile"
-            }
+        
         }
     }
 }
